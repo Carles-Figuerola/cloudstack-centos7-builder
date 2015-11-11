@@ -1,0 +1,10 @@
+This docker container is used to build cloudstack for CentOS 7.
+
+## BUILD
+$ docker build -t docker.orbitz.net/cloudstack-centos7-builder .
+
+## USAGE
+$ docker run -i -v /tmp:/root/cloudstack/dist cloudstack-centos7-builder
+
+  ## Building a Specific Version
+$ docker run -i -v /tmp:/root/cloudstack/dist cloudstack-centos7-builder sh -c "git fetch --all && git checkout 4.6.0-RC20151110T1545 && git pull && ./package.sh -d centos7"
